@@ -48,6 +48,7 @@ public class AdminServiceImpl implements AdminService {
 		productDao.findById(id);
 		Product product=mapper.toProductEntity(productDto);
 		product.setId(id);
+		productDao.saveProduct(product);
 		return Map.of("message","Product Updated Success","product",mapper.toProductDto(product));
 	}
 
